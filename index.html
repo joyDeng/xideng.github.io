@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xi Deng | Research</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-name">Xi Deng</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#industry">Industry</a></li>
+        <li><a href="#experience">Teaching</a></li>
+        <li><a href="#talks">Talks</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about">
+      <span class="pin" aria-hidden="true"></span>
+      <svg class="doodle doodle-main" viewBox="0 0 60 60" aria-hidden="true">
+        <path d="M20,16 L14,6 L24,14"/>
+        <path d="M36,14 L46,6 L40,16"/>
+        <circle cx="30" cy="26" r="12"/>
+        <path d="M20,50 Q16,34 22,30 Q30,38 38,30 Q44,34 40,50 Q30,54 20,50 Z"/>
+        <path d="M40,44 Q54,42 52,26"/>
+        <circle cx="25" cy="25" r="0.8"/>
+        <circle cx="35" cy="25" r="0.8"/>
+      </svg>
+      <svg class="doodle doodle-plant" viewBox="0 0 60 60" aria-hidden="true">
+        <path d="M30,52 L30,24"/>
+        <path d="M30,36 Q18,32 18,20 Q28,22 30,32"/>
+        <path d="M30,30 Q42,26 42,14 Q32,16 30,26"/>
+        <path d="M30,46 Q22,44 20,36 Q28,36 30,42"/>
+      </svg>
+      <div class="about-grid">
+        <div class="about-photo">
+          <img src="assets/photo.jpg" alt="Xi Deng" />
+          <svg class="photo-deco sparkle-a" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12,1 C13,8 14,10.5 23,12 C14,13.5 13,16 12,23 C11,16 10,13.5 1,12 C10,10.5 11,8 12,1 Z"/>
+          </svg>
+          <svg class="photo-deco sparkle-b" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12,1 C13,8 14,10.5 23,12 C14,13.5 13,16 12,23 C11,16 10,13.5 1,12 C10,10.5 11,8 12,1 Z"/>
+          </svg>
+          <svg class="photo-deco sparkle-c" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12,1 C13,8 14,10.5 23,12 C14,13.5 13,16 12,23 C11,16 10,13.5 1,12 C10,10.5 11,8 12,1 Z"/>
+          </svg>
+          <span class="photo-deco sparkle-dot-a" aria-hidden="true"></span>
+          <span class="photo-deco sparkle-dot-b" aria-hidden="true"></span>
+        </div>
+        <div class="about-bio">
+          <h1>Xi Deng</h1>
+          <p class="affiliation">Postdoctoral Researcher<br>California Institute of Technology (Caltech)</p>
+          <p class="bio-text">
+            I am a postdoctoral researcher at Caltech, working with
+            <a href="https://tensorlab.cms.caltech.edu/users/anima/">Prof. Anima Anandkumar</a>.
+            I received my Ph.D. in Computer Science from Cornell University, where I was advised by
+            <a href="http://www.cs.cornell.edu/~srm/">Prof. Steve Marschner</a> in the
+            <a href="https://rgb.cs.cornell.edu/">Graphics and Vision Group</a>.
+            My research focuses on physically based light transport simulation, differentiable
+            rendering, inverse problems, Monte Carlo methods, and neural operators for scientific
+            computing.
+          </p>
+          <p class="bio-text">
+            Before joining Cornell, I was a master's student in the
+            <a href="http://digitalarts.cs.dartmouth.edu/#graduate">Digital Arts</a> program at
+            Dartmouth College. I completed my master's thesis in the
+            <a href="http://vcl.cs.dartmouth.edu/">Visual Computing Lab</a> under the supervision of
+            <a href="https://cs.dartmouth.edu/~wjarosz/">Prof. Wojciech Jarosz</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PUBLICATIONS ===== -->
+    <section id="publications">
+      <span class="pin" aria-hidden="true"></span>
+      <svg class="doodle doodle-main" viewBox="0 0 60 60" aria-hidden="true">
+        <path d="M6,44 L54,14 L36,32 L42,50 L32,38 L18,42 Z"/>
+      </svg>
+      <svg class="doodle doodle-plant" viewBox="0 0 60 60" aria-hidden="true">
+        <path d="M30,52 L30,24"/>
+        <path d="M30,36 Q18,32 18,20 Q28,22 30,32"/>
+        <path d="M30,30 Q42,26 42,14 Q32,16 30,26"/>
+        <path d="M30,46 Q22,44 20,36 Q28,36 30,42"/>
+      </svg>
+      <h2>Publications</h2>
+      <p class="section-note">* denotes equal contribution.</p>
+
+      <!-- Paper 1 -->
+      <div class="pub-item">
+        <div class="pub-thumb">
+          <img src="assets/pub1_thumb.png" alt="Differentiable Neutron Transport thumbnail" />
+        </div>
+        <div class="pub-details">
+          <p class="pub-title">Differentiable Neutron Transport</p>
+          <p class="pub-authors">
+            <strong>Xi Deng</strong>*, Maosen Tang, Michael Czekanski, David Bindel, Steve Marschner
+          </p>
+          <p class="pub-venue">ACM Transactions on Graphics (Proceedings of SIGGRAPH 2026), 45(4)</p>
+          <div class="pub-links">
+            <a href="https://www.cs.cornell.edu/~xideng/pub/Deng26INT.pdf">[PDF]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paper 2 -->
+      <div class="pub-item">
+        <div class="pub-thumb">
+          <img src="assets/pub2_thumb.png" alt="Operator Learning Using Weak Supervision from Walk-on-Spheres thumbnail" />
+        </div>
+        <div class="pub-details">
+          <p class="pub-title">Operator Learning Using Weak Supervision from Walk-on-Spheres</p>
+          <p class="pub-authors">
+            Hrishikesh Viswanath*, Hong Chul Nam*, <strong>Xi Deng</strong>, Julius Berner, Anima Anandkumar, Aniket Bera
+          </p>
+          <p class="pub-venue">arXiv preprint, 2026</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2603.01193">[arXiv]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paper 3 -->
+      <div class="pub-item">
+        <div class="pub-thumb">
+          <img src="assets/pub3_thumb.png" alt="Reconstructing Translucent Thin Objects from Photos thumbnail" />
+        </div>
+        <div class="pub-details">
+          <p class="pub-title">Reconstructing Translucent Thin Objects from Photos</p>
+          <p class="pub-authors">
+            <strong>Xi Deng</strong>*, Lifan Wu, Bruce Walter, Eugene d'Eon, Ravi Ramamoorthi, Steve Marschner, Andrea Weidlich
+          </p>
+          <p class="pub-venue">Proceedings of SIGGRAPH Asia 2024</p>
+          <div class="pub-links">
+            <a href="https://www.cs.cornell.edu/~xideng/deng24thin.html">[Project Page]</a>
+            <a href="https://www.cs.cornell.edu/~xideng/pub/deng24thin-small.pdf">[PDF]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paper 4 -->
+      <div class="pub-item">
+        <div class="pub-thumb">
+          <img src="assets/pub4_thumb.png" alt="A Simple Approach to Differentiable Rendering of SDFs thumbnail" />
+        </div>
+        <div class="pub-details">
+          <p class="pub-title">A Simple Approach to Differentiable Rendering of SDFs</p>
+          <p class="pub-authors">
+            Zichen Wang*, <strong>Xi Deng</strong>, Ziyi Zhang, Wenzel Jakob, Steve Marschner
+          </p>
+          <p class="pub-venue">Proceedings of SIGGRAPH Asia 2024</p>
+          <div class="pub-links">
+            <a href="https://zichenwang01.github.io/relaxed_boundary/">[Project Page]</a>
+            <a href="https://arxiv.org/abs/2405.08733">[arXiv]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paper 5 -->
+      <div class="pub-item">
+        <div class="pub-thumb">
+          <img src="assets/pub5_thumb.png" alt="Neural Control Variates with Automatic Integration thumbnail" />
+        </div>
+        <div class="pub-details">
+          <p class="pub-title">Neural Control Variates with Automatic Integration</p>
+          <p class="pub-authors">
+            Zilu Li*, Guandao Yang*, Qingqing Zhao, <strong>Xi Deng</strong>, Leonidas Guibas, Bharath Hariharan, Gordon Wetzstein
+          </p>
+          <p class="pub-venue">Proceedings of SIGGRAPH 2024</p>
+          <div class="pub-links">
+            <a href="https://www.cs.cornell.edu/~xideng/pub/Li24AutoInt.pdf">[PDF]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paper 6 -->
+      <div class="pub-item">
+        <div class="pub-thumb">
+          <img src="assets/pub6_thumb.png" alt="Neural Caches for Monte Carlo Partial Differential Equation Solver thumbnail" />
+        </div>
+        <div class="pub-details">
+          <p class="pub-title">Neural Caches for Monte Carlo Partial Differential Equation Solver</p>
+          <p class="pub-authors">
+            Zilu Li*, Guandao Yang*, <strong>Xi Deng</strong>, Christopher De Sa, Bharath Hariharan, Steve Marschner
+          </p>
+          <p class="pub-venue">Proceedings of SIGGRAPH Asia 2023</p>
+          <div class="pub-links">
+            <a href="https://zilulii.github.io/cache-website/">[Project Page]</a>
+            <a href="https://www.cs.cornell.edu/~xideng/pub/li23ncache.pdf">[PDF]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paper 7 -->
+      <div class="pub-item">
+        <div class="pub-thumb">
+          <img src="assets/pub7_thumb.png" alt="Reconstructing translucent objects using differentiable rendering thumbnail" />
+        </div>
+        <div class="pub-details">
+          <p class="pub-title">Reconstructing Translucent Objects Using Differentiable Rendering</p>
+          <p class="pub-authors">
+            <strong>Xi Deng</strong>*, Fujun Luan, Bruce Walter, Kavita Bala, Steve Marschner
+          </p>
+          <p class="pub-venue">Proceedings of SIGGRAPH 2022</p>
+          <div class="pub-links">
+            <a href="https://www.cs.cornell.edu/~xideng/deng22dsss.html">[Project Page]</a>
+            <a href="https://www.cs.cornell.edu/~xideng/pub/deng22dsss.pdf">[PDF]</a>
+            <a href="https://www.cs.cornell.edu/~xideng/pub/deng22dsss_sup.pdf">[Supplementary]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paper 8 -->
+      <div class="pub-item">
+        <div class="pub-thumb">
+          <img src="assets/pub8_thumb.png" alt="Path graphs: iterative path space filtering thumbnail" />
+        </div>
+        <div class="pub-details">
+          <p class="pub-title">Path Graphs: Iterative Path Space Filtering</p>
+          <p class="pub-authors">
+            <strong>Xi Deng</strong>*, Miloš Hašan, Nathan Carr, Zexiang Xu, Steve Marschner
+          </p>
+          <p class="pub-venue">ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia), 40(6), December 2021</p>
+          <div class="pub-links">
+            <a href="https://www.cs.cornell.edu/~xideng/deng21graph.html">[Project Page]</a>
+            <a href="https://www.cs.cornell.edu/~xideng/pub/deng21graph_small.pdf">[PDF]</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paper 9 -->
+      <div class="pub-item">
+        <div class="pub-thumb">
+          <img src="assets/pub9_thumb.png" alt="Photon surfaces for robust, unbiased volumetric density estimation thumbnail" />
+        </div>
+        <div class="pub-details">
+          <p class="pub-title">Photon Surfaces for Robust, Unbiased Volumetric Density Estimation</p>
+          <p class="pub-authors">
+            <strong>Xi Deng</strong>*, Shaojie Jiao*, Benedikt Bitterli, Wojciech Jarosz
+          </p>
+          <p class="pub-venue">ACM Transactions on Graphics (Proceedings of SIGGRAPH), 38(4), July 2019</p>
+          <div class="pub-links">
+            <a href="https://www.cs.cornell.edu/~xideng/deng19photon.html">[Project Page]</a>
+            <a href="https://www.cs.cornell.edu/~xideng/pub/deng19photon-small.pdf">[PDF]</a>
+            <a href="https://www.cs.cornell.edu/~xideng/pub/deng19photon-sup.pdf">[Supplementary]</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===== INDUSTRY EXPERIENCE ===== -->
+    <section id="industry">
+      <span class="pin" aria-hidden="true"></span>
+      <svg class="doodle doodle-main" viewBox="0 0 60 60" aria-hidden="true">
+        <path d="M14,24 L46,24 Q50,24 50,28 L50,48 Q50,52 46,52 L14,52 Q10,52 10,48 L10,28 Q10,24 14,24 Z"/>
+        <path d="M22,24 L22,18 Q22,14 26,14 L34,14 Q38,14 38,18 L38,24"/>
+        <path d="M10,36 L50,36"/>
+        <path d="M27,36 L33,36 L33,41 L27,41 Z"/>
+      </svg>
+      <svg class="doodle doodle-plant" viewBox="0 0 60 60" aria-hidden="true">
+        <path d="M30,52 L30,24"/>
+        <path d="M30,36 Q18,32 18,20 Q28,22 30,32"/>
+        <path d="M30,30 Q42,26 42,14 Q32,16 30,26"/>
+        <path d="M30,46 Q22,44 20,36 Q28,36 30,42"/>
+      </svg>
+      <h2>Industry Experience</h2>
+
+      <div class="job-list">
+
+        <div class="job-item">
+          <div class="job-logo">
+            <img src="assets/logo_disney_research.png" alt="Disney Research" />
+          </div>
+          <div class="job-details">
+            <p class="job-role">Research Intern</p>
+            <p class="job-org">Disney Research &middot; Zurich, Switzerland</p>
+            <p class="job-date">2018</p>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <div class="job-logo">
+            <img src="assets/logo_adobe.png" alt="Adobe" />
+          </div>
+          <div class="job-details">
+            <p class="job-role">Research Intern</p>
+            <p class="job-org">Adobe Research</p>
+            <p class="job-date">2020</p>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <div class="job-logo">
+            <img src="assets/logo_nvidia.png" alt="NVIDIA" />
+          </div>
+          <div class="job-details">
+            <p class="job-role">Research Intern</p>
+            <p class="job-org">NVIDIA Research</p>
+            <p class="job-date">2022</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience">
+      <span class="pin" aria-hidden="true"></span>
+      <svg class="doodle doodle-main" viewBox="0 0 60 60" aria-hidden="true">
+        <path d="M18,14 Q10,10 12,24"/>
+        <circle cx="28" cy="24" r="11"/>
+        <path d="M18,48 Q14,32 22,28 Q28,36 36,28 Q44,32 42,48 Q30,54 18,48 Z"/>
+        <path d="M42,40 Q54,36 50,24"/>
+        <circle cx="24" cy="23" r="0.8"/>
+        <circle cx="33" cy="23" r="0.8"/>
+        <path d="M27,28 Q29,30 31,28"/>
+      </svg>
+      <svg class="doodle doodle-plant" viewBox="0 0 60 60" aria-hidden="true">
+        <path d="M30,52 L30,24"/>
+        <path d="M30,36 Q18,32 18,20 Q28,22 30,32"/>
+        <path d="M30,30 Q42,26 42,14 Q32,16 30,26"/>
+        <path d="M30,46 Q22,44 20,36 Q28,36 30,42"/>
+      </svg>
+      <h2>Teaching</h2>
+
+      <div class="exp-list">
+
+        <div class="exp-item">
+          <div class="exp-details">
+            <p class="exp-role">CS1133: Introduction to Python</p>
+            <p class="exp-org">Cornell University</p>
+            <p class="exp-date">Lecturer &middot; Summer 2025</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-details">
+            <p class="exp-role">CS1110: Intro to CS &mdash; Design and Development</p>
+            <p class="exp-org">Cornell University</p>
+            <p class="exp-date">Lecturer &middot; Summer 2023</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-details">
+            <p class="exp-role">CS5625: Interactive Computer Graphics</p>
+            <p class="exp-org">Cornell University</p>
+            <p class="exp-date">Teaching Assistant &middot; Spring 2021</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-details">
+            <p class="exp-role">Graphics &amp; Vision Seminar</p>
+            <p class="exp-org">Cornell University</p>
+            <p class="exp-date">Organizer &middot; Spring 2020</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-details">
+            <p class="exp-role"><a href="http://www.cs.cornell.edu/courses/cs4620/2019fa/">CS 4620: Introduction to Computer Graphics</a></p>
+            <p class="exp-org">Cornell University</p>
+            <p class="exp-date">Teaching Assistant &middot; Fall 2019</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-details">
+            <p class="exp-role"><a href="https://www.cs22.space/">CS 22/122: 3D Modeling</a></p>
+            <p class="exp-org">Dartmouth College</p>
+            <p class="exp-date">Teaching Assistant &middot; Spring 2018, Winter 2019</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-details">
+            <p class="exp-role">CS 65/165: Smartphone Programming</p>
+            <p class="exp-org">Dartmouth College</p>
+            <p class="exp-date">Teaching Assistant &middot; Winter 2018</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-details">
+            <p class="exp-role">CS 24/124: Computer Animation</p>
+            <p class="exp-org">Dartmouth College</p>
+            <p class="exp-date">Teaching Assistant &middot; Fall 2017</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== TALKS ===== -->
+    <section id="talks">
+      <span class="pin" aria-hidden="true"></span>
+      <svg class="doodle doodle-main" viewBox="0 0 60 60" aria-hidden="true">
+        <path d="M6,40 Q18,10 40,14 Q34,18 34,24 Q42,22 50,30 Q40,30 36,34 Q24,46 6,40 Z"/>
+        <path d="M30,16 L34,6 L36,16"/>
+      </svg>
+      <svg class="doodle doodle-plant" viewBox="0 0 60 60" aria-hidden="true">
+        <path d="M30,52 L30,24"/>
+        <path d="M30,36 Q18,32 18,20 Q28,22 30,32"/>
+        <path d="M30,30 Q42,26 42,14 Q32,16 30,26"/>
+        <path d="M30,46 Q22,44 20,36 Q28,36 30,42"/>
+      </svg>
+      <h2>Talks</h2>
+
+      <div class="talks-list">
+
+        <div class="talk-item">
+          <div class="talk-meta"><span class="talk-year">2026</span></div>
+          <div class="talk-content">
+            <p class="talk-title">Solving Inverse Transport Problems using Differentiable Simulation</p>
+            <p class="talk-venue">Invited Talk, UC San Diego &middot; March 27, 2026</p>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta"><span class="talk-year">2025</span></div>
+          <div class="talk-content">
+            <p class="talk-title">Solving Inverse Transport Problems using Differentiable Simulation</p>
+            <p class="talk-venue">Journal Club, Invited Talk, Stanford University &middot; May 13, 2025</p>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta"><span class="talk-year">2025</span></div>
+          <div class="talk-content">
+            <p class="talk-title">Monte Carlo for PDEs</p>
+            <p class="talk-venue">Invited Talk, California Institute of Technology &middot; May 6, 2025</p>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta"><span class="talk-year">2025</span></div>
+          <div class="talk-content">
+            <p class="talk-title">Solving Inverse Transport Problems using Differentiable Simulation</p>
+            <p class="talk-venue">Invited Talk, California Institute of Technology &middot; May 1, 2025</p>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta"><span class="talk-year">2025</span></div>
+          <div class="talk-content">
+            <p class="talk-title">Reconstructing the Physical Properties of Translucent Objects: Applications in Art, Science, and Beyond</p>
+            <p class="talk-venue">Computer Graphics Lab, Invited Talk, Yale University &middot; February 18, 2025</p>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta"><span class="talk-year">2025</span></div>
+          <div class="talk-content">
+            <p class="talk-title">Reconstructing the Physical Properties of Translucent Objects: Applications in Art, Science, and Beyond</p>
+            <p class="talk-venue">CS294 Reading Course, Invited Talk, Dartmouth College &middot; February 7, 2025</p>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta"><span class="talk-year">2024</span></div>
+          <div class="talk-content">
+            <p class="talk-title">Reconstructing the Physical Properties of Translucent Objects: Applications in Art, Science, and Beyond</p>
+            <p class="talk-venue">CS Student Colloquium, Cornell University &middot; December 16, 2024</p>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta"><span class="talk-year">2024</span></div>
+          <div class="talk-content">
+            <p class="talk-title">Reconstruction and Differentiable Rendering</p>
+            <p class="talk-venue">CS294 Reading Course, Invited Talk, Dartmouth College &middot; January 31, 2024</p>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta"><span class="talk-year">2023</span></div>
+          <div class="talk-content">
+            <p class="talk-title">Reconstructing Translucent Object Using Differentiable Rendering</p>
+            <p class="talk-venue">Games Webinar 236 &middot; March 16, 2023 (in Mandarin)</p>
+            <div class="talk-links">
+              <a href="https://www.bilibili.com/video/BV1mL411k7co/">[Video]</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta"><span class="talk-year">2022</span></div>
+          <div class="talk-content">
+            <p class="talk-title">Path Graphs: Iterative Path Space Filtering</p>
+            <p class="talk-venue">Games Webinar 236 &middot; July 7, 2022 (in Mandarin)</p>
+            <div class="talk-links">
+              <a href="https://www.bilibili.com/video/BV1mZ4y1a7Sp/">[Video]</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta"><span class="talk-year">2022</span></div>
+          <div class="talk-content">
+            <p class="talk-title">Reconstructing Translucent Objects Using Differentiable Rendering</p>
+            <p class="talk-venue">CHEN GROUP, Research101, Beijing University of Posts and Telecommunications &middot; April 29, 2022</p>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta"><span class="talk-year">2021</span></div>
+          <div class="talk-content">
+            <p class="talk-title">Path Graphs: Iterative Path Space Filtering</p>
+            <p class="talk-venue">Computer Graphics and Vision Seminar, Cornell University &middot; March 8, 2021</p>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta"><span class="talk-year">2020</span></div>
+          <div class="talk-content">
+            <p class="talk-title">Photon Surfaces for Robust, Unbiased Volumetric Density Estimation</p>
+            <p class="talk-venue">CS294 Reading Course, Invited Talk, Dartmouth College &middot; February 24, 2020</p>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta"><span class="talk-year">2020</span></div>
+          <div class="talk-content">
+            <p class="talk-title">Inverse Light Transport</p>
+            <p class="talk-venue">Computer Graphics and Vision Retreat, Cornell University &middot; February 3, 2020</p>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-meta"><span class="talk-year">2019</span></div>
+          <div class="talk-content">
+            <p class="talk-title">Photon Surfaces for Robust, Unbiased Volumetric Density Estimation</p>
+            <p class="talk-venue">Computer Graphics and Vision Seminar, Cornell University &middot; September 23, 2019</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== VISITOR MAP ===== -->
+    <section id="visitors">
+      <span class="pin" aria-hidden="true"></span>
+      <svg class="doodle doodle-main" viewBox="0 0 60 60" aria-hidden="true">
+        <path d="M16,18 L10,6 L22,14"/>
+        <path d="M36,14 L46,4 L40,18"/>
+        <path d="M18,26 Q14,16 24,14 Q30,12 36,16 Q44,18 40,28 Q38,34 30,34 Q22,34 18,26 Z"/>
+        <path d="M20,34 Q16,46 26,50 Q34,52 40,46 Q46,40 42,34"/>
+        <path d="M42,38 Q56,40 54,26 Q50,32 44,32"/>
+        <circle cx="24" cy="22" r="0.8"/>
+        <circle cx="34" cy="22" r="0.8"/>
+      </svg>
+      <svg class="doodle doodle-secondary" viewBox="0 0 60 60" aria-hidden="true">
+        <circle cx="18" cy="14" r="6"/>
+        <circle cx="42" cy="14" r="6"/>
+        <circle cx="30" cy="26" r="14"/>
+        <ellipse cx="23" cy="26" rx="4" ry="5"/>
+        <ellipse cx="37" cy="26" rx="4" ry="5"/>
+        <circle cx="23" cy="26" r="1"/>
+        <circle cx="37" cy="26" r="1"/>
+        <path d="M18,48 Q14,36 22,32 Q30,38 38,32 Q46,36 42,48 Q30,54 18,48 Z"/>
+      </svg>
+      <h2>Visitors</h2>
+      <p class="section-note">Your location is shown on the map. Pins are placed per visit session — data is not stored.</p>
+      <div id="visitor-map">
+        <div id="map-loading">Locating your position&hellip;</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>
+      &copy; <span id="year"></span> Xi Deng &middot;
+      Template inspired by academic personal pages.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll offset for fixed nav
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 64;
+          window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ===== VISITOR MAP =====
+    const map = L.map('visitor-map', {
+      center: [25, 10],
+      zoom: 2,
+      minZoom: 1,
+      maxZoom: 6,
+      zoomControl: true,
+      scrollWheelZoom: false,
+    });
+
+    // CartoDB Voyager — colorful, friendly style matching the site's warm palette
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    // Custom marker styled with the site accent color
+    const markerHtml = `
+      <div style="
+        width:14px; height:14px;
+        background:#0e9e74;
+        border:2.5px solid #ffffff;
+        border-radius:50%;
+        box-shadow:0 0 0 3px rgba(14,158,116,0.30);
+      "></div>`;
+    const visitorIcon = L.divIcon({
+      html: markerHtml,
+      className: '',
+      iconSize: [14, 14],
+      iconAnchor: [7, 7],
+      popupAnchor: [0, -10],
+    });
+
+    fetch('https://ipapi.co/json/')
+      .then(r => r.json())
+      .then(data => {
+        document.getElementById('map-loading').remove();
+        if (data.latitude && data.longitude) {
+          const label = [data.city, data.region, data.country_name]
+            .filter(Boolean).join(', ');
+          L.marker([data.latitude, data.longitude], { icon: visitorIcon })
+            .addTo(map)
+            .bindPopup(`<span style="font-size:13px;font-family:Inter,sans-serif">${label}</span>`)
+            .openPopup();
+          map.setView([data.latitude, data.longitude], 3, { animate: true });
+        }
+      })
+      .catch(() => {
+        const el = document.getElementById('map-loading');
+        if (el) el.textContent = 'Location unavailable.';
+      });
+  </script>
+
+</body>
+</html>
